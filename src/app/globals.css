@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Version X — Design System
+   Brand: Deep Navy · Royal Blue · Bright Cyan · Electric Purple · Violet
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Primary Scale (Royal Blue → Deep Navy) ── */
+  --primary-50:  #eef6ff;
+  --primary-100: #d9ecff;
+  --primary-200: #b8d9ff;
+  --primary-300: #85bcff;
+  --primary-400: #4a98ff;
+  --primary-500: #005eff; /* Royal Blue — brand anchor */
+  --primary-600: #004acc;
+  --primary-700: #003799;
+  --primary-800: #002466;
+  --primary-900: #04085a; /* Deep Navy */
+
+  /* ── Secondary Scale (Electric Purple → Violet) ── */
+  --secondary-50:  #f5f0ff;
+  --secondary-100: #ebe0ff;
+  --secondary-200: #d4bfff;
+  --secondary-300: #b794ff;
+  --secondary-400: #8a2eff; /* Violet */
+  --secondary-500: #6a1bff; /* Electric Purple — brand anchor */
+  --secondary-600: #5516cc;
+  --secondary-700: #401099;
+  --secondary-800: #2a0a66;
+  --secondary-900: #150533;
+
+  /* ── Semantic Tokens (Light Mode) ── */
+  --background: #ffffff;
+  --surface:    #f8fafc;
+  --foreground: #04085a;
+  --muted:      #64748b;
+  --border:     #e2e8f0;
+  --accent:     #18c7ff; /* Bright Cyan */
+  --success:    #059669;
+  --warning:    #d97706;
+  --danger:     #dc2626;
+
+  /* ── Gradients ── */
+  --gradient-primary:   linear-gradient(135deg, #18c7ff 0%, #005eff 100%);
+  --gradient-secondary: linear-gradient(135deg, #005eff 0%, #6a1bff 100%);
+  --gradient-hero:      linear-gradient(135deg, #18c7ff 0%, #005eff 45%, #6a1bff 100%);
+
+  /* ── Effects & Motion ── */
+  --glass-bg:     rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.24);
+  --glow-primary: 0 0 40px rgba(0, 94, 255, 0.22);
+  --glow-secondary: 0 0 40px rgba(106, 27, 255, 0.2);
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  color-scheme: light;
+}
+
+/* ── Dark Mode ── */
+.dark {
+  --primary-50:  #0a1030;
+  --primary-100: #0f1848;
+  --primary-200: #152060;
+  --primary-300: #1e2f8a;
+  --primary-400: #2a4fd4;
+  --primary-500: #3d7aff;
+  --primary-600: #5c94ff;
+  --primary-700: #85b0ff;
+  --primary-800: #b8d4ff;
+  --primary-900: #e0edff;
+
+  --secondary-50:  #12082a;
+  --secondary-100: #1a0c3d;
+  --secondary-200: #261260;
+  --secondary-300: #3a1a8a;
+  --secondary-400: #6a1bff;
+  --secondary-500: #8a2eff;
+  --secondary-600: #a855ff;
+  --secondary-700: #c084fc;
+  --secondary-800: #ddd6fe;
+  --secondary-900: #f3edff;
+
+  --background: #03051a;
+  --surface:    #0a0f2e;
+  --foreground: #f1f5f9;
+  --muted:      #94a3b8;
+  --border:     #1e293b;
+  --accent:     #18c7ff;
+  --success:    #34d399;
+  --warning:    #fbbf24;
+  --danger:     #f87171;
+
+  --glass-bg:     rgba(10, 15, 46, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glow-primary:   0 0 48px rgba(24, 199, 255, 0.18);
+  --glow-secondary: 0 0 48px rgba(106, 27, 255, 0.22);
+
+  color-scheme: dark;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Tailwind CSS 4 — Theme Bridge
+   Enables: bg-primary-500, text-foreground, border-border, etc.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@theme inline {
+  --color-primary-50:  var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  --color-secondary-50:  var(--secondary-50);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+
+  --color-background: var(--background);
+  --color-surface:    var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted:      var(--muted);
+  --color-border:     var(--border);
+  --color-accent:     var(--accent);
+  --color-success:    var(--success);
+  --color-warning:    var(--warning);
+  --color-danger:     var(--danger);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Base Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--primary-400),
+    var(--secondary-500)
+  );
+  border-radius: 9999px;
+  border: 2px solid var(--surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    var(--primary-500)
+  );
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-400) var(--surface);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Utility Classes
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Gradient text — ideal for hero headings */
+.gradient-text {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Full gradient background */
+.gradient-bg {
+  background: var(--gradient-hero);
+}
+
+/* Glassmorphism card/panel */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+}
+
+/* Subtle glow for feature cards */
+.card-glow {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--glow-primary);
+  transition:
+    box-shadow var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.card-glow:hover {
+  box-shadow: var(--glow-secondary);
+  border-color: color-mix(in srgb, var(--primary-400) 40%, var(--border));
+  transform: translateY(-2px);
+}
+
+/* Standard SaaS section spacing */
+.section-padding {
+  padding-inline: clamp(1rem, 5vw, 2rem);
+  padding-block: clamp(4rem, 10vw, 7rem);
+}
+
+/* Max-width container with responsive gutters */
+.container-custom {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+}
+
+/* Lift on hover — cards, buttons, tiles */
+.hover-lift {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow-primary);
+}
+
+/* Navigation links — desktop & mobile */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  border-radius: 0.5rem;
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.nav-link:hover {
+  color: var(--foreground);
+}
+
+.nav-link--active {
+  color: var(--primary-500);
+}
+
+.nav-link--active::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0.875rem;
+  bottom: 0.25rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--gradient-primary);
+}
+
+.nav-link-mobile--active {
+  background: var(--gradient-secondary);
+  color: #ffffff;
+}
+
+.nav-link-mobile--active:hover {
+  color: #ffffff;
+}
