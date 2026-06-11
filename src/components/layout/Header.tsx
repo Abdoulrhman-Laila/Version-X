@@ -103,7 +103,7 @@ export default function Header() {
           <BrandLogo
             href={brand.homeHref}
             onClick={closeMobileMenu}
-            iconClassName="h-10 w-auto shrink-0 object-contain sm:h-11 mix-blend-multiply"
+            iconClassName="h-10 w-auto shrink-0 object-contain sm:h-11"
             nameClassName="flex items-baseline gap-0.5 text-lg font-bold tracking-tight sm:text-xl"
           />
 

@@ -56,7 +56,7 @@ function BrandMark({
       <div className="min-w-0 leading-tight">
         <p className={nameClassName ?? `flex items-baseline gap-0.5 font-bold tracking-tight ${variant === 'footer' ? 'text-lg' : 'text-lg sm:text-xl'}`}>
           {prefix && (
-            <span className={variant === 'footer' ? 'text-white' : 'text-foreground'}>{prefix}</span>
+            <span className={variant === 'footer' ? 'site-footer__brand-prefix' : 'text-foreground'}>{prefix}</span>
           )}
           {suffix ? (
             <span className="gradient-text">{suffix}</span>

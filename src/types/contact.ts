@@ -1,5 +1,7 @@
 import type { LucideIcon } from 'lucide-react';
 
+import type { ContactCategory } from '@/types/api/contact';
+
 export interface ContactInfoItem {
   id: 'email' | 'phone' | 'location' | 'hours';
   value: string;
@@ -26,4 +28,5 @@ export interface ContactFormData {
   company: string;
   subject: string;
   message: string;
+  category: ContactCategory;
 }

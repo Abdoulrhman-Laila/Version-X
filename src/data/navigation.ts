@@ -1,7 +1,7 @@
 import type { BrandInfo, NavItem } from '@/types/navigation';
 
 export const brand: BrandInfo = {
-  logoIconSrc: '/photo_5846002750095822271_y.jpg',
+  logoIconSrc: '/photo_5846002750095822271_y-removebg-preview.png',
   homeHref: '/home',
 };
 

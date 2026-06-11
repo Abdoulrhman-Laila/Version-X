@@ -10,6 +10,9 @@ export const en = {
     allRightsReserved: 'All rights reserved.',
     sending: 'Sending...',
     featured: 'Featured',
+    loading: 'Loading...',
+    retry: 'Try again',
+    usingFallback: 'Showing cached content. Live data is temporarily unavailable.',
   },
   nav: {
     home: 'Home',
@@ -385,6 +388,12 @@ export const en = {
       title: 'No Projects Found',
       description: 'Try selecting a different category to explore more of our work.',
     },
+    loadError: 'Failed to load projects.',
+    detail: {
+      back: 'Back to projects',
+      notFound: 'Project not found.',
+      technologies: 'Technologies',
+    },
     cta: {
       title: 'Ready To Build Your Next Project?',
       button: 'Contact Us',
@@ -446,6 +455,16 @@ export const en = {
       sectionTitle: 'Talented People, Powerful Results',
       joined: 'Joined',
     },
+    roles: {
+      fullstack: 'Full-Stack Developer',
+      frontend: 'Frontend Developer',
+      backend: 'Backend Developer',
+      ui: 'UI Designer',
+      ux: 'UX Designer',
+      manager: 'Project Manager',
+      designer: 'Designer',
+    },
+    loadError: 'Failed to load team members.',
     stats: {
       experts: 'Experts',
       projects: 'Projects',
@@ -519,7 +538,17 @@ export const en = {
       company: 'Company Name',
       subject: 'Subject',
       message: 'Message',
+      category: 'Category',
       submit: 'Send Message',
+      success: 'Your message has been sent successfully. We will get back to you soon.',
+      error: 'Failed to send your message. Please try again.',
+      categories: {
+        general: 'General Inquiry',
+        project: 'Project Request',
+        support: 'Support',
+        partnership: 'Partnership',
+        career: 'Career',
+      },
       placeholders: {
         fullName: 'John Doe',
         email: 'john@company.com',

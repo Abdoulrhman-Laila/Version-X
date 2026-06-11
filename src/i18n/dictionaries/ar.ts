@@ -12,6 +12,9 @@ export const ar: Dictionary = {
     allRightsReserved: 'جميع الحقوق محفوظة.',
     sending: 'جاري الإرسال...',
     featured: 'مميز',
+    loading: 'جاري التحميل...',
+    retry: 'إعادة المحاولة',
+    usingFallback: 'يتم عرض محتوى احتياطي. البيانات المباشرة غير متاحة مؤقتاً.',
   },
   nav: {
     home: 'الرئيسية',
@@ -345,6 +348,12 @@ export const ar: Dictionary = {
       title: 'لا توجد مشاريع',
       description: 'جرّب اختيار فئة أخرى لاستكشاف المزيد من أعمالنا.',
     },
+    loadError: 'فشل تحميل المشاريع.',
+    detail: {
+      back: 'العودة للمشاريع',
+      notFound: 'المشروع غير موجود.',
+      technologies: 'التقنيات',
+    },
     cta: {
       title: 'مستعد لبناء مشروعك القادم؟',
       button: 'تواصل معنا',
@@ -405,6 +414,16 @@ export const ar: Dictionary = {
       sectionTitle: 'أشخاص موهوبون، نتائج قوية',
       joined: 'انضم في',
     },
+    roles: {
+      fullstack: 'مطور Full-Stack',
+      frontend: 'مطور واجهات أمامية',
+      backend: 'مطور خلفية',
+      ui: 'مصمم واجهات',
+      ux: 'مصمم تجربة مستخدم',
+      manager: 'مدير مشروع',
+      designer: 'مصمم',
+    },
+    loadError: 'فشل تحميل أعضاء الفريق.',
     stats: {
       experts: 'خبير',
       projects: 'مشروع',
@@ -477,7 +496,17 @@ export const ar: Dictionary = {
       company: 'اسم الشركة',
       subject: 'الموضوع',
       message: 'الرسالة',
+      category: 'الفئة',
       submit: 'إرسال الرسالة',
+      success: 'تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.',
+      error: 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.',
+      categories: {
+        general: 'استفسار عام',
+        project: 'طلب مشروع',
+        support: 'دعم فني',
+        partnership: 'شراكة',
+        career: 'وظائف',
+      },
       placeholders: {
         fullName: 'أحمد محمد',
         email: 'ahmed@company.com',
