@@ -14,7 +14,7 @@ export default function TeamHero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative overflow-hidden bg-primary-900 py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-cta-surface py-24 sm:py-32">
       <div className="gradient-bg absolute inset-0 opacity-20" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(106,27,255,0.12)_0%,_transparent_60%)]" aria-hidden="true" />
       {orbs.map((orb) => (

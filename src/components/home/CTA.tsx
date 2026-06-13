@@ -21,7 +21,7 @@ export default function CTA() {
             </p>
             <Link
               href="/contact"
-              className="hover-lift mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-primary-900 shadow-lg transition-colors hover:bg-white/90"
+              className="hover-lift mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-cta-surface shadow-lg transition-colors hover:bg-white/90"
             >
               {t('home.cta.button')}
               <ArrowRight className="h-4 w-4" />

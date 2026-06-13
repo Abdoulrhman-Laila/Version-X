@@ -115,7 +115,7 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-primary-900">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-cta-surface">
       <div className="gradient-bg absolute inset-0 opacity-20" aria-hidden="true" />
       <div
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(24,199,255,0.15)_0%,_transparent_60%)]"

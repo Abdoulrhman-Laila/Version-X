@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useCallback, useState, type FormEvent } from 'react';
 import { Send } from 'lucide-react';
 
+import Toast from '@/components/ui/Toast';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { TranslationKey } from '@/i18n/translate';
+import { CONTACT_CATEGORIES } from '@/types/api/contact';
 import type { ContactFormData } from '@/types/contact';
 
 const initialFormData: ContactFormData = {
@@ -14,6 +16,7 @@ const initialFormData: ContactFormData = {
   company: '',
   subject: '',
   message: '',
+  category: 'general',
 };
 
 const inputClassName =
@@ -30,6 +33,11 @@ export default function ContactForm() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+
+  const closeSuccessToast = useCallback(() => {
+    setShowSuccessToast(false);
+  }, []);
 
   const updateField = (field: keyof ContactFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -41,10 +49,18 @@ export default function ContactForm() {
     await new Promise((resolve) => setTimeout(resolve, 800));
     setFormData(initialFormData);
     setIsSubmitting(false);
+    setShowSuccessToast(true);
   };
 
   return (
-    <div className="glass card-glow rounded-3xl border border-border p-6 sm:p-8">
+    <>
+      <Toast
+        message={t('contact.form.success')}
+        isOpen={showSuccessToast}
+        onClose={closeSuccessToast}
+        closeLabel={t('nav.closeMenu')}
+      />
+      <div className="glass card-glow rounded-3xl border border-border p-6 sm:p-8">
       <h2 className="text-2xl font-bold text-foreground">{t('contact.form.title')}</h2>
       <p className="mt-2 text-sm text-muted">{t('contact.form.description')}</p>
       <form onSubmit={handleSubmit} className="mt-8 space-y-5">
@@ -84,6 +100,24 @@ export default function ContactForm() {
           ))}
         </div>
         <div>
+          <label htmlFor="category" className="mb-2 block text-sm font-medium text-foreground">
+            {t('contact.form.category')}
+          </label>
+          <select
+            id="category"
+            required
+            value={formData.category}
+            onChange={(e) => updateField('category', e.target.value)}
+            className={inputClassName}
+          >
+            {CONTACT_CATEGORIES.map((category) => (
+              <option key={category} value={category}>
+                {t(`contact.form.categories.${category}`)}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
           <label htmlFor="subject" className="mb-2 block text-sm font-medium text-foreground">
             {t('contact.form.subject')}
           </label>
@@ -120,6 +154,7 @@ export default function ContactForm() {
           {isSubmitting ? t('common.sending') : t('contact.form.submit')}
         </button>
       </form>
-    </div>
+      </div>
+    </>
   );
 }

@@ -16,7 +16,7 @@ export default function ServicesCTA() {
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{t('services.cta.title')}</h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/75">{t('services.cta.description')}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className="hover-lift inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-primary-900 shadow-lg transition-colors hover:bg-white/90">
+              <Link href="/contact" className="hover-lift inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3.5 text-sm font-semibold text-cta-surface shadow-lg transition-colors hover:bg-white/90">
                 {t('services.cta.primaryCta')}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
